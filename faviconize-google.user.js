@@ -1,9 +1,12 @@
 // ==UserScript==
-// @name           Faviconize Google (nested icons)
-// @namespace      http://userscripts.ru/js/faviconize-google/
-// @description    Adds favicons to each link offered by Google search results.
-//                 Based on FaviconizeGoogle script by joeytwiddle (http://userscripts.org/scripts/show/48636).
-// @include        http://www.google.*/search?*
+// @name         Faviconize Google (nested icons)
+// @namespace    http://userscripts.ru/js/faviconize-google/
+// @description  Adds favicons to each link offered by Google search results.
+// @include      http://www.google.*/search?*
+// @include      http://www.google.*/webhp*
+// @include      http://www.google.*/#*
+// @version      1.01
+// @licence      MIT
 // ==/UserScript==
 
 
