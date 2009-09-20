@@ -5,14 +5,34 @@
 // @include      http://www.google.*/search?*
 // @include      http://www.google.*/webhp*
 // @include      http://www.google.*/#*
-// @version      1.01
+// @version      1.1
 // @licence      MIT
 // ==/UserScript==
 
 
 (function(){
-  
+
   var links = document.querySelectorAll('#res .w0 a.l');
+
+  /**
+   * Add favicons to links
+   * @param links NodeList or Array of Elements
+   */
+  function add_favicons_to(links) {
+    for (var i=0; i<links.length; i++) {
+      if (links[i].firstChild.tagName != 'IMG') {
+        var host = links[i].href.replace(/^https?:\/\//,'').replace(/\/.*$/,'');
+        var img = document.createElement('IMG');
+        img.src = 'http://www.google.com/s2/favicons?domain=' + host;
+        img.width = '16';
+        img.height = '16';
+        img.className = 'favicon';
+        links[i].insertBefore(img, links[i].firstChild);
+      }
+    }
+  }
+
+  add_favicons_to(links);
 
   if (typeof GM_addStyle == 'undefined') {
     /**
@@ -35,14 +55,16 @@
      li.g {position:relative; padding-left:20px}"
   );
 
-  for (var i=0; i<links.length; i++) {
-    var host = links[i].href.replace(/^https?:\/\//,'').replace(/\/.*$/,'');
-    var img = document.createElement('IMG');
-    img.src = 'http://www.google.com/s2/favicons?domain=' + host;
-    img.width = '16';
-    img.height = '16';
-    img.className = 'favicon';
-    links[i].insertBefore(img, links[i].firstChild);
-  }
-
+  /**
+   * Google's fancy new js ui need this stuff
+   */
+  if (/google.\w+\/(webhp.*)?(#.*)?$/.test(location.href)) {
+    document.body.addEventListener('DOMNodeInserted', function(event){
+      if (event.relatedNode.id == 'rso') {
+        links = document.querySelectorAll('#res .w0 a.l');
+        add_favicons_to(links);
+      }
+    }, false);
+  }  
+  
 })();
