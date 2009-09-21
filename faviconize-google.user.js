@@ -12,7 +12,7 @@
 
 (function(){
 
-  var links = document.querySelectorAll('#res .w0 a.l');
+  var links = document.querySelectorAll('#res li.g a.l');
 
   /**
    * Add favicons to links
@@ -62,7 +62,7 @@
   if (/google.\w+\/(webhp.*)?(#.*)?$/.test(location.href)) {
     document.body.addEventListener('DOMNodeInserted', function(event){
       if (event.relatedNode.id == 'rso') {
-        links = document.querySelectorAll('#res .w0 a.l');
+        links = document.querySelectorAll('#res li.g a.l');
         add_favicons_to(links);
       }
     }, false);
