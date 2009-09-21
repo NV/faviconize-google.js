@@ -51,7 +51,8 @@
 
   GM_addStyle(
     ".favicon {padding-right:4px; vertical-align:middle; border:none;}\
-     .l .favicon {margin-left:-26px; padding-right:9px;}\
+     li.w0 {position:relative;}\
+     .l .favicon {left:-6px; position:absolute; top:2px;}\
      li.g {position:relative; padding-left:20px}"
   );
 
