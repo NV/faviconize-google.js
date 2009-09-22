@@ -5,14 +5,20 @@
 // @include      http://www.google.*/search?*
 // @include      http://www.google.*/webhp*
 // @include      http://www.google.*/#*
-// @version      1.1
+// @version      1.2
 // @licence      MIT
 // ==/UserScript==
 
 
 (function(){
 
-  var links = document.querySelectorAll('#res li.g h3 a.l');
+  var FAVICON_GRABBER = 'http://www.google.com/s2/favicons?domain='; // 'http://favicon.yandex.net/favicon/'
+  var CSS = ".favicon {padding-right:4px; vertical-align:middle; border:none;}\
+     .l .favicon {left:-6px; position:absolute; top:2px;}\
+     li.g {position:relative; padding-left:20px}";
+  var QUERY = '#res li.g h3 a.l';
+
+  var links = document.querySelectorAll(QUERY);
 
   /**
    * Add favicons to links
@@ -23,7 +29,7 @@
       if (links[i].firstChild.tagName != 'IMG') {
         var host = links[i].href.replace(/^https?:\/\//,'').replace(/\/.*$/,'');
         var img = document.createElement('IMG');
-        img.src = 'http://www.google.com/s2/favicons?domain=' + host;
+        img.src = FAVICON_GRABBER + host;
         img.width = '16';
         img.height = '16';
         img.className = 'favicon';
@@ -49,20 +55,17 @@
     }
   }
 
-  GM_addStyle(
-    ".favicon {padding-right:4px; vertical-align:middle; border:none;}\
-     li.w0 {position:relative;}\
-     .l .favicon {left:-6px; position:absolute; top:2px;}\
-     li.g {position:relative; padding-left:20px}"
-  );
+  GM_addStyle(CSS);
 
   /**
-   * Google's fancy new js ui need this stuff
+   * Must match:
+   *   http://www.google.com/#hl=en&source=hp&q=js
+   *   http://www.google.com/webhp?hl=en#hl=en&source=hp&q=js
    */
   if (/google.\w+\/(webhp.*)?(#.*)?$/.test(location.href)) {
     document.body.addEventListener('DOMNodeInserted', function(event){
       if (event.relatedNode.id == 'rso') {
-        links = document.querySelectorAll('#res li.g h3 a.l');
+        links = document.querySelectorAll(QUERY);
         add_favicons_to(links);
       }
     }, false);
