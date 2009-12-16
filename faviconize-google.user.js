@@ -6,7 +6,7 @@
 // @include      http://www.google.*/webhp*
 // @include      http://www.google.*/#*
 // @version      1.2
-// @licence      MIT
+// @licence      Apache 2.0
 // ==/UserScript==
 
 
