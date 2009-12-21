@@ -5,6 +5,7 @@
 // @include      http://www.google.*/search?*
 // @include      http://www.google.*/webhp*
 // @include      http://www.google.*/#*
+// @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
 // @version      1.2
 // @licence      Apache 2.0
 // ==/UserScript==
