@@ -7,7 +7,7 @@
 // @include      http://www.google.*/#*
 // @include      http://groups.google.*/groups/search?* 
 // @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
-// @version      1.4
+// @version      1.5
 // @licence      Apache 2.0
 // ==/UserScript==
 
@@ -16,7 +16,7 @@
 
   var FAVICON_GRABBER = 'http://www.google.com/s2/favicons?domain='; // 'http://favicon.yandex.net/favicon/'
   var CSS = ".favicon {padding-right:4px; vertical-align:middle; border:none;}\
-     #res .favicon {left:0; position:absolute; top:2px;}\
+     #res .favicon {left:0; position:absolute; top:2px; z-index:9}\
      li.g, div.g {position:relative; padding-left:20px}";
   var QUERY = '#res li.g h3 a, #res > div.g > a';
 
