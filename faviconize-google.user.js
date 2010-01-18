@@ -7,7 +7,7 @@
 // @include      http://www.google.*/#*
 // @include      http://groups.google.*/groups/search?* 
 // @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
-// @version      1.3
+// @version      1.4
 // @licence      Apache 2.0
 // ==/UserScript==
 
@@ -18,7 +18,7 @@
   var CSS = ".favicon {padding-right:4px; vertical-align:middle; border:none;}\
      #res .favicon {left:0; position:absolute; top:2px;}\
      li.g, div.g {position:relative; padding-left:20px}";
-  var QUERY = '#res li.g h3 a.l, #res > div.g > a';
+  var QUERY = '#res li.g h3 a, #res > div.g > a';
 
   var links = document.querySelectorAll(QUERY);
 
@@ -29,7 +29,7 @@
   function add_favicons_to(links) {
     for (var i=0; i<links.length; i++) {
       if (links[i].firstChild.tagName != 'IMG') {
-        var host = links[i].href.replace('http://www.google.com/url?url=', '').replace(/^https?:\/\//,'').replace(/\/.*$/,'');
+        var host = links[i].href.replace(/.*https?:\/\//, '').replace(/\/.*$/,'');
         var img = document.createElement('IMG');
         img.src = FAVICON_GRABBER + host;
         img.width = '16';
