@@ -7,7 +7,7 @@
 // @include      http://www.google.*/#*
 // @include      http://groups.google.*/groups/search?* 
 // @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
-// @version      1.5
+// @version      1.6
 // @licence      Apache 2.0
 // ==/UserScript==
 
@@ -20,15 +20,13 @@
      li.g, div.g {position:relative; padding-left:20px}";
   var QUERY = '#res li.g h3 a, #res > div.g > a';
 
-  var links = document.querySelectorAll(QUERY);
-
   /**
    * Add favicons to links
-   * @param links NodeList or Array of Elements
+   * @param {NodeList} links
    */
   function add_favicons_to(links) {
     for (var i=0; i<links.length; i++) {
-      if (links[i].firstChild.tagName != 'IMG') {
+      if (links[i].firstChild.className != 'favicon') {
         var host = links[i].href.replace(/.*https?:\/\//, '').replace(/\/.*$/,'');
         var img = document.createElement('IMG');
         img.src = FAVICON_GRABBER + host;
@@ -40,7 +38,7 @@
     }
   }
 
-  add_favicons_to(links);
+  add_favicons_to(document.querySelectorAll(QUERY));
 
   if (typeof GM_addStyle == 'undefined') {
     /**
@@ -60,17 +58,34 @@
   GM_addStyle(CSS);
 
   /**
-   * Must match:
-   *   http://www.google.com/#hl=en&source=hp&q=js
-   *   http://www.google.com/webhp?hl=en#hl=en&source=hp&q=js
+   * Debounce function from http://code.google.com/p/jquery-debounce/
    */
-  if (/google.\w+\/(webhp.*)?(#.*)?$/.test(location.href)) {
-    document.body.addEventListener('DOMNodeInserted', function(event){
-      if (event.relatedNode.id == 'rso') {
-        links = document.querySelectorAll(QUERY);
-        add_favicons_to(links);
+  function debounce(fn, timeout, invokeAsap, context) {
+    if (arguments.length == 3 && typeof invokeAsap != 'boolean') {
+      context = invokeAsap;
+      invokeAsap = false;
+    }
+    var timer;
+    return function() {
+      var args = arguments;
+      if(invokeAsap && !timer) {
+        fn.apply(context, args);
       }
-    }, false);
+      clearTimeout(timer);
+      timer = setTimeout(function() {
+        if(!invokeAsap) {
+          fn.apply(context, args);
+        }
+        timer = null;
+      }, timeout);
+    };
   }
+
+  document.body.addEventListener('DOMNodeInserted', debounce(function handleNewFavicons(event){
+      if (event.target.className != 'favicon') {
+        add_favicons_to(document.querySelectorAll(QUERY));
+      }
+    }, 500)
+  , false);
   
 })();
