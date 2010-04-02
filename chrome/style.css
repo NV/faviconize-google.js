@@ -1,0 +1,16 @@
+.favicon {
+	padding-right: 4px;
+	vertical-align: middle;
+	border: none;
+}
+#res .favicon {
+	left: 0;
+	position: absolute;
+	top: 2px;
+	z-index: 9;
+}
+li.g,
+div.g {
+	position: relative;
+	padding-left: 20px;
+}
