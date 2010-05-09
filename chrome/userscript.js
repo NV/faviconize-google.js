@@ -7,7 +7,7 @@
 // @include      http://www.google.*/#*
 // @include      http://groups.google.*/groups/search?* 
 // @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
-// @version      1.7
+// @version      1.8
 // @licence      Apache 2.0
 // ==/UserScript==
 
