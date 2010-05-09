@@ -12,5 +12,5 @@
 li.g,
 div.g {
 	position: relative;
-	padding-left: 20px;
+	padding-left: 20px !important;
 }
