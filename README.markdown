@@ -7,4 +7,6 @@ Install [faviconize-google.user.js](http://userscripts.org/scripts/source/58177.
 
 [Google Chrome extension](https://chrome.google.com/extensions/detail/fijobgpmmkilncagclaejpjlccfhopdo)
 
+[Safari extension](http://userscripts.ru/js/faviconize-google/Faviconize_Google.safariextz)
+
 Based on [FaviconizeGoogle](http://userscripts.org/scripts/show/48636) by joeytwiddle.

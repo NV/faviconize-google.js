@@ -14,7 +14,7 @@
 
 (function(){
 
-	(typeof GM_addStyle != 'undefined' ? GM_addStyle : function GM_addStyle(css) {
+	(typeof GM_addStyle != 'undefined' ? GM_addStyle : function addStyle(css) {
 		var head = document.getElementsByTagName('head')[0];
 		var style = document.createElement("style");
 		style.type = "text/css";

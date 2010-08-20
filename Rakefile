@@ -3,6 +3,7 @@ require 'jspp'
 require 'colored'
 
 NAME = 'faviconize-google.user.js'
+SAFARI_EXTENSION = 'Faviconize Google.safariextension'
 
 task :default => :userjs
 task :userjs do
@@ -13,4 +14,10 @@ task :userjs do
   puts NAME.green
 end
 
-CLOBBER.include NAME
+task :safari do
+  cp 'chrome/faviconize-google.js', SAFARI_EXTENSION
+  cp 'chrome/style.css', SAFARI_EXTENSION
+  puts SAFARI_EXTENSION.green
+end
+
+CLOBBER.include [NAME, "#{SAFARI_EXTENSION}/faviconize-google.js", "#{SAFARI_EXTENSION}/style.css"]
