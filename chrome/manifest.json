@@ -1,6 +1,6 @@
 {
 	"name": "Faviconize Google",
-	"version": "1.8",
+	"version": "1.8.1",
 	"description": "Adds favicons to each link offered by Google search results",
 	"icons": {
 		"32": "icon_32.png",
@@ -9,8 +9,7 @@
 	},
 	"content_scripts": [
 		{
-			"js": ["faviconize-google.js"],
-			"css": ["style.css"],
+			"js": ["faviconize-google.user.js"],
 			"matches": [
 "http://www.google.com/search?*",
 "http://www.google.com/webhp*",
