@@ -10,6 +10,7 @@
 // @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
 // @version      1.9
 // @licence      Apache 2.0
+// @icon         http://nv.github.com/faviconize-google.js/chrome/icon_48.png
 // ==/UserScript==
 
 
