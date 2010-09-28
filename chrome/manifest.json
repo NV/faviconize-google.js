@@ -1,6 +1,6 @@
 {
 	"name": "Faviconize Google",
-	"version": "1.8.1",
+	"version": "1.9",
 	"description": "Adds favicons to each link offered by Google search results",
 	"icons": {
 		"32": "icon_32.png",
@@ -14,6 +14,7 @@
 "http://www.google.com/search?*",
 "http://www.google.com/webhp*",
 "http://www.google.com/#*",
+"https://encrypted.google.com/search?*",
 "http://groups.google.com/groups/search?*",
 "http://www.google.ac/search?*",
 "http://www.google.ae/search?*",
