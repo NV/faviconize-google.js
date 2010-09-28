@@ -1,7 +1,7 @@
 faviconize-google.user.js
 ===============================
 
-![Google search result page with favicons](/NV/faviconize-google.js/raw/master/screenshot.png)
+![Google search result page with favicons](http://nv.github.com/faviconize-google.js/screenshot.png)
 
 Install [faviconize-google.user.js](http://userscripts.org/scripts/source/58177.user.js) for Firefox Greasemonkey, Opera or Safari GreaseKit.
 
