@@ -14,3 +14,14 @@ div.g {
 	position: relative;
 	padding-left: 20px !important;
 }
+div.vsc {
+	position: relative;
+}
+div.vsc * {
+	position: static;
+}
+div.vsc img.favicon {
+	position: absolute;
+	top: 0;
+	left: -20px !important;
+}
