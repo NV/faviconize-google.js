@@ -1,10 +1,16 @@
 require 'rake/clean'
 require 'jspp'
 require 'colored'
+require 'zip/zip'
+
+VERSION = '1.9'
 
 NAME = 'faviconize-google.user.js'
 CHROME_EXTENSION = 'chrome/faviconize-google.user.js'
 SAFARI_EXTENSION = 'Faviconize Google.safariextension'
+OPERA_ICONS_DIR = 'opera/icons'
+OPERA_INCLUDES_DIR = 'opera/includes'
+OPERA_EXTENSION = "FaviconizeGoogle-#{VERSION}.oex"
 
 task :default => :userjs
 task :userjs do
@@ -29,9 +35,29 @@ task :safari do
   puts SAFARI_EXTENSION.green
 end
 
+directory OPERA_ICONS_DIR
+directory OPERA_INCLUDES_DIR
+
+file OPERA_EXTENSION => [:userjs, OPERA_ICONS_DIR, OPERA_INCLUDES_DIR] do
+  cp NAME, "#{OPERA_INCLUDES_DIR}/#{NAME}"
+  cp 'chrome/icon_64.png', "#{OPERA_ICONS_DIR}/icon_64.png"
+  Zip::ZipOutputStream.open(OPERA_EXTENSION) do |z|
+    Dir.glob('opera/**/*.*') do |f|
+      z.put_next_entry(f.sub(/^opera\//, ''))
+      z.print IO.read(f)
+    end
+  end
+  puts OPERA_EXTENSION.green
+end
+
+task :opera => OPERA_EXTENSION
+
 CLOBBER.include [
 	NAME,
 	CHROME_EXTENSION,
+    OPERA_ICONS_DIR,
+    OPERA_INCLUDES_DIR,
+    OPERA_EXTENSION,
 	"#{SAFARI_EXTENSION}/faviconize-google.js",
 	"#{SAFARI_EXTENSION}/style.css"
 ]
