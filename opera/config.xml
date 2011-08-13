@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets">
+    <name>Faviconize Google</name>
+    <description>Adds favicons to each link offered by Google search results.</description>
+    <author href="http://userscripts.org/scripts/show/58177">Nikita Vasilyev (ported by Ivan Korotkov)</author>
+    <icon src="icons/icon_64.png"/>
+</widget>

@@ -44,7 +44,7 @@ function debounce(fn, timeout, invokeAsap, context) {
 	};
 }
 
-document.body.addEventListener('DOMNodeInserted', debounce(function handleNewFavicons(event){
+document.addEventListener('DOMNodeInserted', debounce(function handleNewFavicons(event){
 		if (event.target.className != 'favicon') {
 			add_favicons_to(document.querySelectorAll(QUERY));
 		}
