@@ -5,7 +5,7 @@
 // @include      http://www.google.*/search?*
 // @include      https://encrypted.google.*/search?*
 // @include      http://www.google.*/webhp*
-// @include      http://www.google.*/#*
+// @include      http://www.google.*/
 // @include      http://groups.google.*/groups/search?* 
 // @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
 // @version      1.9

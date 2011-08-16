@@ -1,0 +1,4 @@
+*.oex
+*.user.js
+/opera/icons/*
+/opera/includes/*

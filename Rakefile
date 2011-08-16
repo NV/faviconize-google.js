@@ -3,14 +3,14 @@ require 'jspp'
 require 'colored'
 require 'zip/zip'
 
-VERSION = '1.9'
+EXTENSION_VERSION = '1.9'
 
 NAME = 'faviconize-google.user.js'
 CHROME_EXTENSION = 'chrome/faviconize-google.user.js'
 SAFARI_EXTENSION = 'Faviconize Google.safariextension'
 OPERA_ICONS_DIR = 'opera/icons'
 OPERA_INCLUDES_DIR = 'opera/includes'
-OPERA_EXTENSION = "FaviconizeGoogle-#{VERSION}.oex"
+OPERA_EXTENSION = "FaviconizeGoogle-#{EXTENSION_VERSION}.oex"
 
 task :default => :userjs
 task :userjs do
