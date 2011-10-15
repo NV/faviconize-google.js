@@ -22,11 +22,11 @@ task :userjs do
 end
 
 task :chrome do
-	file = JSPP 'chrome/userscript.js'
-	File.open CHROME_EXTENSION, 'w' do |f|
-	  f.puts file
-	end
-	puts NAME.green
+  file = JSPP 'chrome/userscript.js'
+  File.open CHROME_EXTENSION, 'w' do |f|
+    f.puts file
+  end
+  puts NAME.green
 end
 
 task :safari do
@@ -53,11 +53,11 @@ end
 task :opera => OPERA_EXTENSION
 
 CLOBBER.include [
-	NAME,
-	CHROME_EXTENSION,
+  NAME,
+  CHROME_EXTENSION,
     OPERA_ICONS_DIR,
     OPERA_INCLUDES_DIR,
     OPERA_EXTENSION,
-	"#{SAFARI_EXTENSION}/faviconize-google.js",
-	"#{SAFARI_EXTENSION}/style.css"
+  "#{SAFARI_EXTENSION}/faviconize-google.js",
+  "#{SAFARI_EXTENSION}/style.css"
 ]
