@@ -17,11 +17,8 @@ div.g {
 div.vsc {
 	position: relative;
 }
-div.vsc * {
-	position: static;
-}
 div.vsc img.favicon {
-	position: absolute;
+	position: absolute !important;
 	top: 0;
 	left: -20px !important;
 }
