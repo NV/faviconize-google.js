@@ -1,4 +1,3 @@
-*://groups.google.%s/groups/search?*
 *://www.google.%s/
 *://www.google.%s/search?*
 *://www.google.%s/webhp*

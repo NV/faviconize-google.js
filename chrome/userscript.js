@@ -6,7 +6,7 @@
 // @include      https://encrypted.google.*/search?*
 // @include      http://www.google.*/webhp*
 // @include      http://www.google.*/
-// @include      http://groups.google.*/groups/search?* 
+// @include      https://www.google.*/
 // @copyright    2009+, Nikita Vasilyev (http://userscripts.org/scripts/show/58177)
 // @version      2.1
 // @licence      Apache 2.0
