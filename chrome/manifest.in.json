@@ -1,6 +1,6 @@
 {
 	"name": "Faviconize Google",
-	"version": "2.0",
+	"version": "2.1",
 	"description": "Adds favicons to each link offered by Google search results",
 	"icons": {
 		"32": "icon_32.png",
