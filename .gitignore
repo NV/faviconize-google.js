@@ -1,4 +1,6 @@
 *.oex
 *.user.js
+/chrome/manifest.json
+/chrome/matches.js
 /opera/icons/*
 /opera/includes/*
