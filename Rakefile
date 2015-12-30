@@ -3,7 +3,7 @@ require 'jspp'
 require 'colored'
 require 'zip/zip'
 
-EXTENSION_VERSION = '2.0'
+EXTENSION_VERSION = '2.4'
 
 NAME = 'faviconize-google.user.js'
 CHROME_EXTENSION = 'chrome/faviconize-google.user.js'
