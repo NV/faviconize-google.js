@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2</string>
+	<string>2.4</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>Chrome</key>
@@ -228,6 +228,8 @@
 				<string>*.google.co.zm</string>
 				<string>*.google.zw</string>
 			</array>
+			<key>Include Secure Pages</key>
+			<true/>
 			<key>Level</key>
 			<string>Some</string>
 		</dict>
