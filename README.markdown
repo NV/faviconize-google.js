@@ -1,13 +1,19 @@
 faviconize-google.user.js
 ===============================
 
+The extension doesn't work any longer. I was unable to keep up with Chrome search result changes. Sorry.
+
+I still accept pull requests.
+
+---
+
 ![Google search result page with favicons](http://nv.github.com/faviconize-google.js/screenshot.png)
 
 Install [faviconize-google.user.js](http://userscripts.org/scripts/source/58177.user.js) for Firefox Greasemonkey and Safari GreaseKit.
 
 ## Google Chrome extension
 
-Google Chrome extension has been taken down from Chrome Web Stor
+Google Chrome extension has been taken down from Chrome Web Store.
 
 1. Open chrome://extensions.
 2. Press "Load unpacked extension..." button.
