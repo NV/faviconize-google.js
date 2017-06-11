@@ -5,10 +5,16 @@ faviconize-google.user.js
 
 Install [faviconize-google.user.js](http://userscripts.org/scripts/source/58177.user.js) for Firefox Greasemonkey and Safari GreaseKit.
 
-[Google Chrome extension](https://chrome.google.com/extensions/detail/fijobgpmmkilncagclaejpjlccfhopdo)
+## Google Chrome extension
 
-[Safari extension](http://userscripts.ru/js/faviconize-google/Faviconize_Google.safariextz)
+Google Chrome extension has been taken down from Chrome Web Stor
 
-[Opera extension](https://addons.opera.com/en/addons/extensions/details/faviconize-google/)
+1. Open chrome://extensions.
+2. Press "Load unpacked extension..." button.
+3. Chose "faviconize-google.js/chrome" directory from this repository.
+
+## [Safari extension](http://userscripts.ru/js/faviconize-google/Faviconize_Google.safariextz)
+
+## [Opera extension](https://addons.opera.com/en/addons/extensions/details/faviconize-google/)
 
 Based on [FaviconizeGoogle](http://userscripts.org/scripts/show/48636) by joeytwiddle.
