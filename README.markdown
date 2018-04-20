@@ -23,4 +23,4 @@ Google Chrome extension has been taken down from Chrome Web Store.
 
 ## [Opera extension](https://addons.opera.com/en/addons/extensions/details/faviconize-google/)
 
-Based on [FaviconizeGoogle](http://userscripts.org/scripts/show/48636) by joeytwiddle.
+Based on [FaviconizeGoogle](https://greasyfork.org/en/scripts/7664-faviconizegoogle) by joeytwiddle.
