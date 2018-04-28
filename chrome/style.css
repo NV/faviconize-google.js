@@ -1,19 +1,12 @@
-.favicon {
-	padding-right: 4px;
-	vertical-align: middle;
-	border: none;
-}
 #res .favicon {
-	left: -20px;
 	position: absolute;
 	top: 2px;
-	z-index: 9;
+	left: -20px;
 }
-div.vsc {
-	position: relative;
-}
-div.vsc img.favicon {
-	position: absolute !important;
-	top: 0;
-	left: -20px !important;
+
+#res .related-question-pair .favicon {
+	top: 3px;
+	left: -15px;
+	width: 13px;
+	height: 13px;
 }
